@@ -13,3 +13,6 @@ app.use("/", apiRoutes)
 app.use("/", noteRoutes)
 app.listen(PORT, () => console.log(`Listening on PORT: PORT`));
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+});
