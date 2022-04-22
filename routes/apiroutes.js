@@ -1,20 +1,20 @@
 const router = require('express').Router();
 const data = require('../db/db.json');
 const fs = require('fs')
-// const exportData = (data) => {
-//     fs.writeFileSync("./db/db.json", JSON.stringify(data))
-// }
+const uuid = require('uuid')
+const path = require('path')
+const exportData = (data) => {
+    fs.writeFileSync("./db/db.json", JSON.stringify(data))
+}
 router.get("/api/notes", (req,res) => {
-    res.json(data)
+    res.sendFile(path.join(__dirname, "../db/db.json"))
 })
 
 router.post("/api/notes", (req,res) => {
-
-    data.push(req.body)
-    console.log(req.body)
-    res.json("Note added.")
-    fs.writeFileSync("./db/db.json", JSON.stringify(data))
-
-})
+    const notes = req.body
+    notes.id = uuid.v4()
+    data.push(notes)
+    exportData(data);
+});
 
 module.exports = router

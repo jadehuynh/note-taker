@@ -8,15 +8,7 @@ const displayNote = (data) => {
 router.get("/notes", (req,res) => {
     res.sendFile(path.join(__dirname, "../public/notes.html"))
 })
-
-// router.post("/notes", (req,res) => {
-//     res.sendFile(path.join(__dirname, "../public/notes.html"))
-//     displayNote(req.body);
-// })
-// router.get("/notes", (req,res) => {
-//     res.displayNote(ata);
-// })
-router.get('*', (req, res) => {
+router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'))
 });
 
