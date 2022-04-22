@@ -15,6 +15,7 @@ router.post("/api/notes", (req,res) => {
     notes.id = uuid.v4()
     data.push(notes)
     exportData(data);
+    res.sendFile(path.join(__dirname, "../db/db.json"))
 });
 
 module.exports = router
