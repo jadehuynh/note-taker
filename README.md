@@ -8,5 +8,13 @@ You can access previous tasks and content entered along the left column by simpl
 
 ----
 ----
-* [GitHub Repository]()
-* [Heroku Link]()
+* [GitHub Repository](https://github.com/jadehuynh/note-taker)
+* [Heroku Link](https://boiling-lowlands-79306.herokuapp.com/)
+----
+----
+## Homepage of Note Taker Application
+![Homepage of Note Take Application](./public/assets/images/homepage.png)
+
+----
+## Example of a list of tasks saved
+![List of tasks saved](./public/assets/images/example.png)
