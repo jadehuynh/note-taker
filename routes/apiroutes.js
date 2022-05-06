@@ -12,10 +12,10 @@ router.get("/api/notes", (req,res) => {
 
 router.post("/api/notes", (req,res) => {
     const notes = req.body
-    notes.id = uuid.v4()
-    data.push(notes)
+        notes.id = uuid.v4()
+        data.push(notes)
     exportData(data);
-    res.sendFile(path.join(__dirname, "../db/db.json"))
+        res.sendFile(path.join(__dirname, "../db/db.json"))
 });
 
 module.exports = router
